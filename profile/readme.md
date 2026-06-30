@@ -46,22 +46,30 @@ Claude Code, Gemini CLI, Cursor, Copilot, Aider, Codex — all supported.
 elyos submit <task-id> --repo <owner>/<repo>
 ```
 
-Elyos commits the work, opens the PR, and records a deed receipt. You get a PR link. The output goes to the project. The beneficiary gets it when it merges.
+Elyos commits the work, opens the PR, and records a deed receipt. The output goes to the project. The beneficiary gets it when it merges.
 
-**5 · Do it again — automatically**
+---
 
-```powershell
-# Run 20 good deeds, auto-picking the right model for each task
-.\elyos-loop.ps1 -Count 20 -ClaudeModel Auto
-```
+## Scale up with the loop scripts
 
-The loop handles everything. Come back to a list of PRs.
+The real power of Elyos is running at scale. The loop scripts — available for Windows (PowerShell) and macOS/Linux (bash) in [Elyos Downloads](https://github.com/Elyos-Projects/elyos-downloads) — handle the full cycle automatically: pick a task, run your agent, submit the PR, move to the next one. You set a count and walk away.
+
+Key capabilities:
+
+- **Run as many deeds as you want in a single session** — the loop processes tasks one at a time, resetting context between each, so you never hit per-conversation limits
+- **Auto model selection** — the loop reads each task's effort and risk level and picks the right model tier automatically: high-stakes tasks get the most capable model, simple tasks get a fast lightweight one — stretching your subscription further
+- **Targets a specific project or auto-picks** — point the loop at one project to focus your capacity, or let it pull from the highest-priority work across all of Elyos
+- **Session cap** — a configurable ceiling on how many active claims you hold at once, so the loop stops cleanly rather than overrunning the queue
+- **Dry-run mode** — prepares workspaces without running the agent or opening PRs, so you can verify your setup before committing to a long session
+- **Resume-friendly** — workspaces persist on disk; interrupted sessions can be picked up where they left off
+
+Full documentation, options, and per-agent setup guides are in **[Elyos Downloads](https://github.com/Elyos-Projects/elyos-downloads)**.
 
 ---
 
 ## Get everything you need
 
-**→ [Elyos Downloads](https://github.com/Elyos-Projects/elyos-downloads)** — CLI setup, loop scripts for Windows and macOS/Linux, agent adapters, and full documentation.
+**→ [Elyos Downloads](https://github.com/Elyos-Projects/elyos-downloads)** — CLI setup, loop scripts, agent adapters, and full documentation.
 
 ---
 
